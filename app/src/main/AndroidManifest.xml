@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.communityproject">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".LoginAndRegister.ManagerCommunityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateCommunityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginAndRegister.SelectCommunityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".IntroduceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Post.ReplyMessageActivity"
+            android:exported="true" />
+        <activity android:name=".Acyivity.SelectPeopleActivity" />
+        <activity android:name=".UserCheck.userCheckActivity" />
+        <activity android:name=".ManagementActivity" />
+        <activity android:name=".Post.UpdatePostActivity" />
+        <activity
+            android:name=".PasswordUpdate_Activity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".Acyivity.Activity_record_Activity" />
+        <activity android:name=".Post.insert_post_Activity" />
+        <activity android:name=".Staple.staple_page_Activity" />
+        <activity android:name=".Staple.insert_staple_Activity" />
+        <activity android:name=".Staple.StapleActivity" />
+        <activity android:name=".Attraction.attraction_page_Activity" />
+        <activity android:name=".Attraction.insert_attraction_Activity" />
+        <activity android:name=".Acyivity.insert_activity_Activity" />
+        <activity android:name=".Attraction.AttractionActivity" />
+        <activity android:name=".Post.ReplyActivity" />
+        <activity android:name=".Acyivity.Acyivity_Activity" />
+        <activity android:name=".Post.PostActivity" />
+        <activity android:name=".LoginAndRegister.RegisterActivity" />
+        <activity android:name=".LoginAndRegister.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

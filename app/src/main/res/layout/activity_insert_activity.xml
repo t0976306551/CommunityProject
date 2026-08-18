@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFAF4"
+    tools:context=".Acyivity.insert_activity_Activity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/activityName"
+                android:hint="活動名稱"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textColorHint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_style"/>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/startDate"
+                    android:hint="活動開始日期"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textColorHint="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="7"
+                    android:background="@drawable/edit_text_style"/>
+
+                <Button
+                    android:id="@+id/btn_startDate"
+                    android:text="請選擇日期"
+
+                    android:background="#005AB5"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/endDate"
+                    android:hint="活動結束日期"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/black"
+                    android:layout_margin="10dp"
+                    android:layout_weight="7"
+                    android:background="@drawable/edit_text_style"/>
+
+                <Button
+                    android:id="@+id/btn_endDate"
+                    android:text="請選擇日期"
+                    android:background="#005AB5"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/s_time"
+                    android:text="開始時間"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+
+                    android:textColorHint="@color/black"
+                    android:layout_margin="10dp"
+                    android:layout_weight="7"
+                    android:background="@drawable/edit_text_style"/>
+
+                <TextView
+                    android:id="@+id/e_time"
+                    android:text="結束時間"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/black"
+                    android:layout_margin="10dp"
+                    android:layout_weight="7"
+                    android:background="@drawable/edit_text_style"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:paddingLeft="10dp"
+                android:text="人數限制："
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/total_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/edit_text_style"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:paddingRight="10dp"
+                android:text="沒有限制人數請填 無"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="#FF2D2D"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_insertImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#005AB5"
+                android:textColor="@color/white"
+                android:text="選擇圖片"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/activityContext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="活動內容"
+                android:gravity="top"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_weight="0"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_style"/>
+
+            <Button
+                android:id="@+id/sendActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#005AB5"
+                android:textColor="@color/white"
+                android:text="送出"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+        </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

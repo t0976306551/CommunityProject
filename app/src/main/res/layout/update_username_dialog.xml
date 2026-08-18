@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/select_image_style"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColorHint="@color/black"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp">
+        <EditText
+            android:id="@+id/updateUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edtext_style"
+            android:textColorHint="@color/black"
+            android:hint="請輸入資料"
+            android:singleLine="false"
+            android:lineSpacingExtra="3dp"
+            android:inputType="textMultiLine"
+            android:padding="20dp"
+
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_updateName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/button_bg"
+            android:layout_marginBottom="10dp"
+            android:text="修改"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <stroke
+                android:width="2dp"
+                android:color="#D3D3D3" />
+            <corners android:radius="40dp" />
+            <solid android:color="@color/white" >
+            </solid>
+            <padding android:right="20dp" />
+            <size
+                android:layout_height="60dp"
+                />
+        </shape>
+    </item>
+
+    <item>
+        <bitmap
+            android:gravity="end"
+            android:src="@drawable/inverted_triangle"
+            android:antialias="true"
+            android:tint="@color/black"
+            />
+    </item>
+</layer-list>

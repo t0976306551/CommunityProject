@@ -1,0 +1,19 @@
+*.iml
+.gradle
+/local.properties
+local.properties
+.idea/
+.DS_Store
+/build
+build/
+/captures
+.externalNativeBuild
+.cxx
+
+# 本機備份壓縮檔
+*.7z
+*.zip
+*.apk
+*.aab
+*.keystore
+*.jks

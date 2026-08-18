@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gank_swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ACD6FF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+           android:padding="20dp"
+            android:id="@+id/userinfo"
+            android:background="#0066CC"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/m_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="測試人員"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/m_account"
+                android:textStyle="bold"
+                android:text="aa324917"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_below="@id/m_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/c_name"
+                android:textStyle="bold"
+                android:text="XX社區"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:layout_below="@id/m_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/user_preset" />
+        </RelativeLayout>
+
+
+       <LinearLayout
+           android:layout_marginTop="10dp"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/userinfo"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:ignore="MissingConstraints" >
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_introduce"
+               app:cardBackgroundColor="@color/white"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_columnWeight="1"
+               android:layout_rowWeight="1"
+               app:cardElevation="60dp"
+               app:cardCornerRadius="12dp"
+               android:layout_margin="12dp"
+               tools:ignore="MissingConstraints">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:padding="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <ImageView
+                       android:id="@+id/introduceimage"
+                       android:src="@drawable/speech"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"/>
+
+                   <TextView
+                       android:textColor="@color/black"
+                       app:layout_constraintStart_toEndOf="@id/introduceimage"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:textStyle="bold"
+                       android:text="社區介紹"
+                       android:layout_marginLeft="20dp"
+                       android:textSize="23sp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+           </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_post"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/postimage"
+                        android:src="@drawable/post"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/postimage"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="社區貼文"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_password"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toTopOf="@id/cardview_post"
+                app:layout_constraintLeft_toRightOf="@id/cardview_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/password"
+                        android:src="@drawable/membercard"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/password"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="會員中心"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_activity"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cardview_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/activity"
+                        android:src="@drawable/activity"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/activity"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="社區活動"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_activityRecord"
+                app:layout_constraintTop_toTopOf="@id/cardview_activity"
+                app:layout_constraintLeft_toRightOf="@id/cardview_activity"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/activity_record"
+                        android:src="@drawable/activity_record"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/activity_record"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="活動紀錄"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_activityattraction"
+                app:layout_constraintTop_toBottomOf="@id/cardview_activity"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/gazebo"
+                        android:src="@drawable/gazebo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/gazebo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="景點介紹"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_activitystaple"
+                app:layout_constraintTop_toTopOf="@id/cardview_activityattraction"
+                app:layout_constraintLeft_toRightOf="@id/cardview_activityattraction"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/product"
+                        android:src="@drawable/product"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/product"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textStyle="bold"
+                        android:text="名產介紹"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="23sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_userCheck"
+               app:cardBackgroundColor="@color/white"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_columnWeight="1"
+               android:layout_rowWeight="1"
+               app:cardElevation="6dp"
+               app:cardCornerRadius="12dp"
+               android:layout_margin="12dp"
+               tools:ignore="MissingConstraints">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:padding="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <ImageView
+                       android:id="@+id/userCheck"
+                       android:src="@drawable/checked"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"/>
+
+                   <TextView
+                       android:textColor="@color/black"
+                       app:layout_constraintStart_toEndOf="@id/userCheck"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:textStyle="bold"
+                       android:text="審核及權限"
+                       android:layout_marginLeft="20dp"
+                       android:textSize="23sp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_logout"
+               app:cardBackgroundColor="@color/white"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_columnWeight="1"
+               android:layout_rowWeight="1"
+               app:cardElevation="6dp"
+               app:cardCornerRadius="12dp"
+               android:layout_margin="12dp"
+               tools:ignore="MissingConstraints">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:padding="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <ImageView
+                       android:id="@+id/logout"
+                       android:src="@drawable/logout"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"/>
+
+                   <TextView
+                       android:textColor="@color/black"
+                       app:layout_constraintStart_toEndOf="@id/logout"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:textStyle="bold"
+                       android:text="帳戶登出"
+                       android:layout_marginLeft="20dp"
+                       android:textSize="23sp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+           </androidx.cardview.widget.CardView>
+       </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

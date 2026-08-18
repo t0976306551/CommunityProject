@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:ignore="MissingConstraints">
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:background="@drawable/activityitem_style"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+
+    android:layout_height="wrap_content">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="10dp"
+            android:id="@+id/btn_deletePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/close_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_close"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/activity_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="手機APP教學"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:layout_constraintTop_toBottomOf="@+id/close_imageView"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                android:id="@+id/editActivity"
+                app:layout_constraintTop_toTopOf="@id/activity_name"
+                app:layout_constraintBottom_toBottomOf="@id/activity_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/edit"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:id="@+id/m_nameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="發起人："
+                app:layout_constraintStart_toStartOf="@+id/activity_name"
+                app:layout_constraintTop_toBottomOf="@id/activity_name"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/m_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/m_nameTitle"
+                app:layout_constraintTop_toTopOf="@+id/m_nameTitle"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/starttimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="活動日期："
+                app:layout_constraintTop_toBottomOf="@id/m_nameTitle"
+                app:layout_constraintStart_toStartOf="@+id/activity_name"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/starttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text=""
+               app:layout_constraintStart_toEndOf="@+id/starttimeTitle"
+                app:layout_constraintTop_toTopOf="@+id/starttimeTitle"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/endtimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="活動時間："
+                app:layout_constraintTop_toBottomOf="@id/starttimeTitle"
+                app:layout_constraintStart_toStartOf="@+id/activity_name"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/endtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/endtimeTitle"
+                app:layout_constraintTop_toTopOf="@+id/endtimeTitle"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/totalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="人數限制："
+                app:layout_constraintTop_toBottomOf="@id/endtimeTitle"
+                app:layout_constraintStart_toStartOf="@+id/endtimeTitle"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/totalTitle"
+                app:layout_constraintTop_toTopOf="@+id/totalTitle"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/applyheader"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/totalTitle"
+                app:layout_constraintStart_toStartOf="@+id/totalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/applyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="目前人數："
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/applyTitle"
+                app:layout_constraintTop_toTopOf="@+id/applyTitle"
+                tools:ignore="MissingConstraints" />
+
+                <ProgressBar
+                    android:id="@+id/peopleLoad"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"/>
+
+                <Button
+                    android:id="@+id/loadpeople"
+                    android:text="刷新"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/activity_button"
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/activity_img"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/applyheader"
+                android:src="@drawable/cat"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/activity_contextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="活動說明"
+                app:layout_constraintStart_toStartOf="@+id/activity_name"
+                app:layout_constraintTop_toBottomOf="@id/activity_img"
+                tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/context"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/activity_contextTitle"
+                    android:text="早上9點至中午12點，來自樹德科技大學教授，將帶著學生至社區活動中心教導我們手機的相關知識。"
+                    tools:ignore="MissingConstraints" />
+
+
+
+            <Button
+                android:id="@+id/selectPeople"
+                android:text="查看已參加人員"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/context"
+                android:background="@drawable/activity_button"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/add"
+                    android:text="參加活動"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/activity_button"
+                    app:layout_constraintTop_toBottomOf="@id/selectPeople"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/add"
+                app:layout_constraintBottom_toBottomOf="@id/add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
