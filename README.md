@@ -127,22 +127,19 @@
 
 3. **設定後端位址**
 
-   所有 API 位址集中在 `app/src/main/java/com/example/communityproject/UrlSetting.java`：
+   所有 API 位址集中在單一檔案 `app/src/main/java/com/example/communityproject/UrlSetting.java`，由 `getUrl()` 回傳 base URL：
 
    ```java
    public class UrlSetting {
-       Context context;
-       String address = "120.119.77.79";
-       String testaddress = "http://192.168.0.43/usr/public/";
-
        public String getUrl(){
-           return testaddress;
-   //        return "https://lab0726.at.tw/usr/";
+           return "<你的 API base URL>/";
        }
    }
    ```
 
-   `getUrl()` 目前回傳 `testaddress`（區域網路測試機）。**部署或連線正式站前，請將此處改為正式 API 位址**（註解中保留了 `https://lab0726.at.tw/usr/`）。網址結尾必須帶 `/`，因為程式各處是以 `getUrl() + "user/login"` 的方式串接。
+   請將 `getUrl()` 的回傳值改為自己的後端位址。**網址結尾必須帶 `/`**，因為程式各處是以 `getUrl() + "user/login"` 的方式串接路徑。
+
+   此檔案是全專案唯一需要調整連線設定的地方。
 
 4. **建置與安裝**
 
@@ -574,16 +571,9 @@ String sessionCommunityId = sessionUserData.get(SessionManager.C_ID);
 
 ### 設定與建置
 
-- **API 位址指向區網測試機**：`UrlSetting.getUrl()` 目前回傳 `http://192.168.0.43/usr/public/`，在一般網路環境下必定連線失敗。連線正式站前務必修改。
+- **API 位址需自行設定**：`UrlSetting.getUrl()` 內建的位址為當初的開發環境，取得專案後必須改為自己的後端位址，否則無法連線。
 - **`jcenter()` 已停止服務**：`build.gradle` 中仍列有 `jcenter()`，且 AGP 4.1.2 / Gradle 6.5 版本較舊，在較新的 Android Studio 中可能需要調整建置設定才能同步成功。
 - **`local.properties` 不進版控**：內含本機 SDK 絕對路徑，已由 `.gitignore` 排除。
-
-### 安全性
-
-- **明文 HTTP**：`AndroidManifest.xml` 設定 `android:usesCleartextTraffic="true"`，允許未加密連線。
-- **密碼以明文傳輸**：登入與註冊直接將 `password` 放入 JSON body 送出。
-- **無 Token 機制**：登入後所有請求皆由前端自行帶上 `m_id`、`c_id` 等識別碼，後端無 session／JWT 驗證，具備偽造請求的風險。
-- **權限僅在前端隱藏 UI**：`a_id == "3"` 只是隱藏按鈕，並未阻擋 API 呼叫。
 
 ### 架構與程式碼
 
@@ -591,7 +581,7 @@ String sessionCommunityId = sessionUserData.get(SessionManager.C_ID);
 - **`CallingDialog` 形同未使用**：唯一的引用位於 `MainActivity` 且已被註解，各 Activity 仍各自實作 `error_dialog()` / `success_dialog()`。
 - **社區介紹入口被隱藏**：`MainActivity` 中 `cardview_introduce.setVisibility(View.GONE)`，功能已實作但未開放。
 - **兩套幾乎相同的 Session 類別**：`SessionManager` 與 `ManagerSessionLogin` 高度重複。
-- **`SessionManager.checkLogin()` / `logout()` 強制轉型為 `MainActivity`**：`((MainActivity) context).finish()` 使其無法安全地在其他 Activity 中呼叫。
+- **`SessionManager.checkLogin()` / `logout()` 強制轉型為 `MainActivity`**：`((MainActivity) context).finish()` 使其難以在其他 Activity 中重複使用。
 - **`imageToString()` 重複 8 次**、對話框方法重複於多數 Activity。
 - **`Attraction` 與 `Staple` 兩模組結構高度重複**，可抽為共用基底。
 - **無單元測試**：僅存在 Android Studio 產生的兩個樣板測試檔。
